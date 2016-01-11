@@ -3,27 +3,23 @@
 <html>
 	<head>
 		<title>DG Tutorial Blog</title>
-
-		<h1>Head H1</h1>
 	</head>
 	<body>
 
-		<h1>Body H1</h1>
-		<h2>Body H2</h2>
-		<h3>Body H3</h3>
-		<h4>Body H4</h4>
-		<h5>Body H5</h5>
-		<h6>Body H6</h6>
-		<h7>Body H7</h7>
-		
-		<br /><em>Emphasized text + break</em> <!--With break-->
-		<p><strong>Strong text + paragraph</strong></p> <!--With paragraph-->
-		<a href="http://www.google.com">hyperlink yo</a>
-		<ul><li>first list item</li><li>second list item</li></ul>
-		pre-divider
-		<div style = "color:#0000FF">inside the divider</div> <!--Divider-->
-		post-divider
-		<p>1st paragraph</p>
-		<p>2nd paragraph</p>
+		<div>
+			<h1><a href="/">Django Girls Blog</a></h1>
+		</div>	
+
+		{% for post in posts %}
+
+			<div>	
+				<h1><a href="">{{ post.title }}</a></h1>
+				<em>published: {{ post.published_date }}</em>
+				<p>{{post.text|linebreaks}}</p>
+			</div>		
+				
+		{% endfor %}
+
+
 	</body>
 </html>
